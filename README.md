@@ -17,3 +17,6 @@ Commands:
    
 Commands could be added to package.json > scripts, 
 but we still have to pass ENV variables as command parameters.
+
+## Adds
+* env-vars file with dotenv-plugin(https://webpack.js.org/plugins/environment-plugin/)

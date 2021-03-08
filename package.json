@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "checkout": "git checkout $VERSION",
-    "build:prod": "yarn checkout && yarn build"
+    "build:prod": "yarn checkout && yarn install && yarn build"
   },
   "devDependencies": {
     "dotenv-webpack": "^7.0.1",

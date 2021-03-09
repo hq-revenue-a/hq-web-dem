@@ -2,6 +2,7 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = () => {
+    console.log("build ref: ", process.env.FOLDER)
     return {
         mode: 'production',
         entry: './src/index.js',

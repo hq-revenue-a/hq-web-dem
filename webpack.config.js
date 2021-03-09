@@ -1,24 +1,24 @@
 const path = require('path');
-const webpack = require("webpack");
+// const webpack = require("webpack");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = (env) => {
-    console.log('VERSION: ', env.VERSION);
-    console.log('NAME: ', env.NAME);
     return {
         mode: 'production',
         entry: './src/index.js',
         output: {
             filename: 'main.js',
-            path: path.resolve(__dirname, 'dist'),
+            path: path.resolve(__dirname, 'dist', env.FOLDER),
         },
         plugins: [
-            new webpack.DefinePlugin({
-                'process.env': {
-                    NODE_ENV: JSON.stringify(env.NODE_ENV),
-                    NAME: JSON.stringify(env.NAME),
-                    VERSION: JSON.stringify(env.VERSION),
-                },
-            }),
+            new Dotenv({
+                path: './vars/test-hotel/alecsa.env',
+                safe: true,
+                allowEmptyValues: true,
+                systemvars: true,
+                silent: true,
+                defaults: false
+            })
         ]
     }
 };

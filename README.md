@@ -29,7 +29,7 @@ Implement build flow with environment variables in a .env file. The advantages c
 ## Usage example:
 
 ```shell
-VERSION='v0.5' && yarn build:prod --env FOLDER=FF51
+VERSION='v0.5' FOLDER=FF51 yarn build:prod
 ```
 
 This command will:
@@ -42,3 +42,21 @@ This command will:
 
 ## Adds
 * env-vars file with dotenv-plugin(https://webpack.js.org/plugins/environment-plugin/)
+
+## Docker
+
+1. Build docker image based on the Dockerfile
+```shell
+docker build -t demo/builder:latest -f docker/builder/Dockerfile .
+```
+
+2. Run docker image. 
+   Requirements:
+     * Create a folder called `builds` in the same directory from where you will run the container.
+     * Use volumes in order to have the build result
+     * FOLDER and VERSION as env vars are required. Minimal version is v0.7, and only possible folder value is FF51.
+```shell
+docker run --rm --env FOLDER=FF51 --env VERSION='v0.8' -v $(pwd)/builds:/hq-web-dem/dist -it demo/builder
+```
+
+3. Check the build result on builds/FF51/main.js

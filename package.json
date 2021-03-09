@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "update": "git pull",
     "checkout": "git checkout $VERSION",
-    "build:prod": "yarn checkout && yarn install && yarn build"
+    "build:prod": "yarn update && yarn checkout && yarn install && yarn build"
   },
   "devDependencies": {
     "dotenv-webpack": "^7.0.1",

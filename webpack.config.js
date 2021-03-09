@@ -1,5 +1,4 @@
 const path = require('path');
-// const webpack = require("webpack");
 const Dotenv = require('dotenv-webpack');
 
 module.exports = (env) => {
@@ -12,7 +11,7 @@ module.exports = (env) => {
         },
         plugins: [
             new Dotenv({
-                path: './vars/test-hotel/alecsa.env',
+                path: path.resolve(__dirname, 'vars', env.FOLDER, 'index.env'),
                 safe: true,
                 allowEmptyValues: true,
                 systemvars: true,

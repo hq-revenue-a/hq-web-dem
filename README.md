@@ -42,3 +42,10 @@ This command will:
 
 ## Adds
 * env-vars file with dotenv-plugin(https://webpack.js.org/plugins/environment-plugin/)
+
+## Docker
+
+Docker build:
+```shell
+docker build -t demo/builder:latest -f docker/builder/Dockerfile .
+```

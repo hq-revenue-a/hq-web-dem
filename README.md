@@ -29,7 +29,7 @@ Implement build flow with environment variables in a .env file. The advantages c
 ## Usage example:
 
 ```shell
-VERSION='v0.5' && yarn build:prod --env FOLDER=FF51
+VERSION='v0.5' FOLDER=FF51 yarn build:prod
 ```
 
 This command will:
